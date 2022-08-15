@@ -1,0 +1,27 @@
+{% extends "includes/layout.html" %}
+
+{% block content %}
+<!-- <div class="container"> -->
+{% for post in posts %}
+<div class="card  ml-10 mt-3" style="max-width: 540px; max-height: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="static/image/dp.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <div  class="align-items-center .mx-auto">
+                <span>{{ post.name }}</span>
+                <img src="static/image/user1.jpg" class="rounded-circle" alt="Cinque Terre" width="35px" height="35px" style="float: right;"> 
+            </div> 
+            <hr>
+          <h5 class="card-title">{{ post.title1 }}</h5>
+          <p class="card-text">{{ post.content | truncate(80,True,'...') }}</p>
+          <p class="card-text"><small class="text-muted">{{ post.date }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+<!-- </div> -->
+{% endblock %}
